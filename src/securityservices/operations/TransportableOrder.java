@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+
+import securityservices.datacheck.Check;
 import securityservices.shared.PhysicalData;
 
 public class TransportableOrder implements Transportable {
@@ -12,7 +16,7 @@ public class TransportableOrder implements Transportable {
     protected LocalDateTime deliveryDate;
     protected DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy'-'HH:mm:ss");
     protected PhysicalData physics;
-    protected ArrayList<TransportableDetail> details = new ArrayList();
+    protected Map<String, TransportableDetail> details = new TreeMap();
 
     public TransportableOrder() {
         this.physics = new PhysicalData();
@@ -136,5 +140,54 @@ public class TransportableOrder implements Transportable {
     @Override
     public Double getVolum() {
         return this.physics.getHigh() * this.physics.getWide() * this.physics.getDeep();
+    }
+    
+    public int getNumDetails() 
+    {
+		return details.size();
+	}
+    
+    public int setDetail (String ref, int amount) 
+    {
+    	int error = -1;
+    	
+    	details.put(ref, new TransportableDetail());
+    	
+		return error;
+	} 
+    
+    public String getDetail(String ref) 
+    {
+    	String stringDetail = "";
+    	
+    	if(Check.checkBlankOrNull(ref) == 0) 
+    	{
+    		stringDetail = detailToString(ref);
+    	}
+    	
+    	return stringDetail;
+	}
+    
+    public int updateDetail (String ref, int amount) 
+    {
+		return 0;
+	}
+    
+    public int deleteDetail(String ref) 
+    {
+		return 0;
+	}
+    
+    /*
+    public double getWeight() {
+		return 0;
+	}
+	*/
+
+    private String detailToString(String ref)
+    {
+    	return details.get(ref).getAmount() + ", " +
+    			details.get(ref).getVolum() + ", " +
+				details.get(ref).getWeight();
     }
 }

@@ -96,6 +96,8 @@ public class Check {
 		String firstDateAlter = firstDate;
 		String secondDateAlter = secondDate;
 		
+		if(checkDate(firstDate) != 0 && checkDate(secondDate) != 0) return (int)diff;
+		
 		if (containsDash(firstDate)) firstDateAlter = replaceDash(firstDate);
 		if (containsDash(secondDate)) secondDateAlter = replaceDash(secondDate);
 		if (containsSlash(firstDate)) firstDateAlter = replaceSlash(firstDate);
@@ -179,6 +181,15 @@ public class Check {
 		matcher = pattern.matcher(mail);
 		
 		if(matcher.matches()) error = 0;
+		
+		return error;
+	}
+	
+	public static int checkBlankOrNull(String str)
+	{
+		int error = -1;
+		
+		if(!str.equals("") && !str.isEmpty()) error = 0;
 		
 		return error;
 	}
