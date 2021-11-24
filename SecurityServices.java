@@ -54,10 +54,6 @@ public class SecurityServices {
         
         System.out.println ("error updateDetail: " + error);
         System.out.println (order.getDetail("002"));
-        
-        Stock stock = new Stock();
-        loadStock(stock);
-        stock.delStock(prodCatalog.g);
     }
     
     private static void loadCatalog (ProductCatalog prodCatalog) 
@@ -74,10 +70,5 @@ public class SecurityServices {
         prodCatalog.addCatalog(new Equipment("020", "Server", "Informatico", "SS", "desc", 3000.0, 0.0, 0.8, 0.6, 0.45, 7.1, true, "dataservices", "hw list", 800));
         prodCatalog.addCatalog(new Equipment("021", "NetworkAnalyzer", "Informatico", "SS", "desc", 1000.0, 0.0, 0.8, 0.6, 0.45, 4.5, true, "Segurity", "hw list", 600));
         prodCatalog.addCatalog(new Equipment("022", "Firewall", "Informatico", "SS", "desc", 30.0, 600.0, 0.8, 0.6, 0.45, 3.8, true, "firewall", "hw list", 400));        
-    }
-    
-    private static void loadStock (Stock stock) 
-    {
-    	
     }
 }
