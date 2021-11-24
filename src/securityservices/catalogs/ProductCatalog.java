@@ -19,7 +19,8 @@ public class ProductCatalog {
             if (product.getCode().equals(ref)) {
                 return product;
             }
-        }        
+        }
+        
         return null;
     }
             
@@ -28,7 +29,8 @@ public class ProductCatalog {
 
         if ( getMarketable(ref) instanceof Storable ) {                
                 return (Storable)getMarketable(ref);
-            }        
+            }
+        
         return null;
     }
 }

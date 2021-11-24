@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -142,6 +143,11 @@ public class TransportableOrder implements Transportable {
         return this.physics.getHigh() * this.physics.getWide() * this.physics.getDeep();
     }
     
+    /*
+     * AC5
+     * setDetail() TransportableDetial (?)
+     * getWeight (?)
+     */
     public int getNumDetails() 
     {
 		return details.size();
@@ -170,17 +176,44 @@ public class TransportableOrder implements Transportable {
     
     public int updateDetail (String ref, int amount) 
     {
-		return 0;
+    	int error = -1;
+    	
+    	if(Check.checkBlankOrNull(ref) == 0 && details.containsKey(ref)) 
+    	{
+    		details.get(ref).setAmount(amount);
+    		error = 0;
+    	}
+    	
+		return error;
 	}
     
     public int deleteDetail(String ref) 
     {
-		return 0;
+    	int error = -1;
+    	
+    	if(Check.checkBlankOrNull(ref) == 0 && details.containsKey(ref)) 
+    	{
+    		details.remove(ref);
+    		
+    		if(!details.containsKey(ref)) error = 0;
+    	}
+    	
+		return error;
 	}
     
     /*
-    public double getWeight() {
-		return 0;
+    public double getWeight() 
+    {
+    	double error = -1;
+    	
+    	Iterator iterator = details.entrySet().iterator();
+
+		while(iterator.hasNext())
+		{
+			error += details.get(iterator).getWeight();
+		}
+    	
+		return error;
 	}
 	*/
 
