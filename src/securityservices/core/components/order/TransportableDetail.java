@@ -1,6 +1,6 @@
-package securityservices.operations;
+package securityservices.core.components.order;
 
-import securityservices.products.Storable;
+import securityservices.core.components.shared.products.Storable;
 
 public class TransportableDetail {
 

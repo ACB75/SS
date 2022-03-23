@@ -1,10 +1,10 @@
-package securityservices.operations;
+package securityservices.core.components.shared.products;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import securityservices.datacheck.Check;
+import securityservices.core.components.shared.check.Check;
 
 /*
  * AC5

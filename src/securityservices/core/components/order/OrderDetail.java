@@ -1,6 +1,6 @@
-package securityservices.operations;
+package securityservices.core.components.order;
 
-import securityservices.products.Marketable;
+import securityservices.core.components.shared.products.Marketable;
 
 public class OrderDetail {
 

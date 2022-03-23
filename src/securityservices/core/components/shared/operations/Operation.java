@@ -1,9 +1,10 @@
-package securityservices.operations;
+package securityservices.core.components.shared.operations;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import securityservices.stakeholders.StakeHolder;
+
+import securityservices.core.components.shared.stakeholders.StakeHolder;
 
 public abstract class Operation {
     protected StakeHolder interested;

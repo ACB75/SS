@@ -1,14 +1,14 @@
-package securityservices.operations;
+package securityservices.core.components.order;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import securityservices.catalogs.ProductCatalog;
-import securityservices.datacheck.Check;
-import securityservices.products.Marketable;
-import securityservices.products.Product;
-import securityservices.products.Service;
-import securityservices.stakeholders.StakeHolder;
+
+import securityservices.core.components.shared.catalogs.ProductCatalog;
+import securityservices.core.components.shared.check.Check;
+import securityservices.core.components.shared.operations.Operation;
+import securityservices.core.components.shared.operations.Transportable;
+import securityservices.core.components.shared.stakeholders.StakeHolder;
 
 public class Order extends Operation {
 

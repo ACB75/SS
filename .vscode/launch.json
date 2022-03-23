@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SecurityServices",
+            "request": "launch",
+            "mainClass": "securityservices.SecurityServices",
+            "projectName": "SS_f3fc1987"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

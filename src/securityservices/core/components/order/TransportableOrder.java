@@ -1,4 +1,4 @@
-package securityservices.operations;
+package securityservices.core.components.order;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,8 +8,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-import securityservices.datacheck.Check;
-import securityservices.shared.PhysicalData;
+import securityservices.core.components.shared.check.Check;
+import securityservices.core.components.shared.operations.Transportable;
+import securityservices.core.components.shared.physics.PhysicalData;
+
 
 public class TransportableOrder implements Transportable {
 

@@ -1,6 +1,6 @@
-package securityservices.operations;
+package securityservices.core.components.shared.operations;
 
-import securityservices.products.Storable;
+import securityservices.core.components.shared.products.Storable;
 
 public interface Transportable extends Storable {
     public String getDeliveryAddress();

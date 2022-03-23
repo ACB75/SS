@@ -1,4 +1,4 @@
-package securityservices.shared;
+package securityservices.core.components.shared.physics;
 
 public class PhysicalData {
 
